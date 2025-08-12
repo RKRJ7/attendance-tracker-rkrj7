@@ -2,7 +2,7 @@
 <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
-        android:label="attendance_tracker"
+        android:label="Attendance Tracker"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

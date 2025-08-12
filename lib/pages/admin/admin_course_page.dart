@@ -1,6 +1,7 @@
 import 'package:attendance_tracker/components/my_session_tile.dart';
 import 'package:attendance_tracker/models/course.dart';
 import 'package:attendance_tracker/models/session.dart';
+import 'package:attendance_tracker/pages/admin/csv_gen_page.dart';
 import 'package:attendance_tracker/services/database/database_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -55,6 +56,18 @@ class _AdminCoursePageState extends State<AdminCoursePage> {
 
     return Scaffold(
       backgroundColor: thData.surface,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CsvGenPage(course: widget.course),
+            ),
+          );
+        },
+        backgroundColor: thData.primary,
+        child: Icon(Icons.download_rounded, color: thData.secondary),
+      ),
       appBar: AppBar(
         title: Text(
           widget.course.courseName,
